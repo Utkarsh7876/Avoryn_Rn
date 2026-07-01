@@ -28,7 +28,7 @@ export function AboutBlurb() {
             {aboutStats.map((stat, index) => (
               <RevealOnScroll key={stat.label} delay={0.1 + index * 0.1}>
                 <div className="rounded-[28px] border border-borderSubtle bg-panel px-6 py-8">
-                  <p className="font-display text-5xl font-bold text-textPrimary">
+                  <p className="font-display text-[clamp(28px,5vw,48px)] font-bold leading-none text-textPrimary">
                     {stat.value}
                   </p>
                   <p className="mt-3 text-[13px] uppercase tracking-[0.18em] text-textSecondary">

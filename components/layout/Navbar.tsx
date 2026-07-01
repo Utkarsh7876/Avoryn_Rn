@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Button } from "@/components/ui/Button";
 import { navLinks } from "@/lib/constants";
+import { handleHashLinkClick } from "@/lib/scrollToHash";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,6 +79,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={(event) => handleHashLinkClick(event, link.href)}
                   className={`nav-link text-[14px] uppercase tracking-[0.08em] transition ${
                     active ? "text-textPrimary" : "text-textSecondary hover:text-textPrimary"
                   }`}

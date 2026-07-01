@@ -70,7 +70,7 @@ export const heroMarquee = [
 ];
 
 export const aboutStats: Stat[] = [
-  { value: "200+", label: "Creators Network" },
+  { value: "800+", label: "Creators Network" },
   { value: "50+", label: "Brand Campaigns" },
   { value: "3x", label: "Avg. Engagement Lift" },
 ];

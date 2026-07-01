@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { X } from "lucide-react";
 import type { SVGProps } from "react";
 
 import { contactEmail, footerColumns, socialLinks } from "@/lib/constants";
+import { handleHashLinkClick } from "@/lib/scrollToHash";
 
 function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -73,6 +76,7 @@ export function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  onClick={(event) => handleHashLinkClick(event, link.href)}
                   className="block text-sm text-textSecondary transition hover:text-textPrimary"
                 >
                   {link.label}

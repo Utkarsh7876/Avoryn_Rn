@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+
+import { handleHashLinkClick } from "@/lib/scrollToHash";
 
 type ButtonVariant = "accent" | "outline" | "light";
 type ButtonIcon = "arrow-right" | "arrow-up-right" | false;
@@ -38,6 +42,7 @@ export function Button({
   return (
     <Link
       href={href}
+      onClick={(event) => handleHashLinkClick(event, href)}
       className={`${baseClassName} ${variantClassNames[variant]} ${className}`}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}

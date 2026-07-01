@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import { contactEmail, navLinks } from "@/lib/constants";
+import { handleHashLinkClick } from "@/lib/scrollToHash";
 
 type MobileMenuProps = {
   open: boolean;
@@ -73,7 +74,10 @@ export function MobileMenu({ open, activeHash, onClose }: MobileMenuProps) {
                 >
                   <Link
                     href={link.href}
-                    onClick={onClose}
+                    onClick={(event) => {
+                      handleHashLinkClick(event, link.href);
+                      onClose();
+                    }}
                     className={`font-display text-[clamp(40px,11vw,56px)] leading-[0.95] tracking-[-0.06em] ${
                       activeHash === link.href ? "text-accent" : "text-textPrimary"
                     }`}
